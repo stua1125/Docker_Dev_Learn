@@ -5,17 +5,17 @@ docker container run --interactive --tty diamol/base
 docker container ls --all
 #### 상태와 상관없이 모든 컨테이너의 목록을 확인한다.
 
-# 1. Nginx 컨테이너 실행
+#### 1. Nginx 컨테이너 실행
 docker run --name web -d -p 80:80 nginx
 
-# 2. 컨테이너 내부로 접속
+#### 2. 컨테이너 내부로 접속
 docker exec -it web bash
 
-# 3. 웹사이트 파일이 저장된 디렉터리 확인
+#### 3. 웹사이트 파일이 저장된 디렉터리 확인
 cd /usr/share/nginx/html
 
-# 4. 컨테이너 내부 파일 수정 (예: index.html 변경)
+#### 4. 컨테이너 내부 파일 수정 (예: index.html 변경)
 echo "<h1>Hello from Docker</h1>" > /usr/share/nginx/html/index.html
 
-# 5. 변경 사항 확인
+#### 5. 변경 사항 확인
 curl http://localhost
